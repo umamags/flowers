@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowers of the World</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f0eb;
+      color: #2c2c2c;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #2c5f2e;
+      color: #fff;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      opacity: 0.75;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .flower-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .flower-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding: 1.25rem 1.5rem 0.75rem;
+      border-bottom: 1px solid #f0ece8;
+    }
+
+    .flower-number {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2c5f2e;
+      background: #e8f5e9;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    .flower-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .flower-comment {
+      padding: 0.75rem 1.5rem 1rem;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .flower-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .flower-images img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .flower-images img:hover {
+      opacity: 0.9;
+    }
+
+    .flower-images img.error {
+      opacity: 0.3;
+      filter: grayscale(1);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .flower-images { grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Flowers of the World</h1>
+  <p>Ten of the most widely cultivated flowers across the globe</p>
+</header>
+
+<main id="flowers"></main>
+
+<script>
+const flowers = [
+  {
+    "name": "Rosa (Rose)",
+    "comment": "Arguably the most famous flower in the world. Grown in gardens globally for beauty, fragrance, and commercial use (cut flowers, perfumes).",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Rosa_rubiginosa_1.jpg/500px-Rosa_rubiginosa_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Rosa_Precious_platinum.jpg/500px-Rosa_Precious_platinum.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Rose_Prickles.jpg/250px-Rose_Prickles.jpg"
+    ]
+  },
+  {
+    "name": "Tulipa (Tulip)",
+    "comment": "Extremely popular in temperate regions. Widely cultivated in gardens and commercially grown, especially in Europe and North America.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%9D.JPG/500px-%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%9D.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tulipa_alberti_Regel_-_PhytoKeys_%282024%29.jpg/500px-Tulipa_alberti_Regel_-_PhytoKeys_%282024%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tulips_in_Seoul_Forest%2C_South_Korea1.jpg/500px-Tulips_in_Seoul_Forest%2C_South_Korea1.jpg"
+    ]
+  },
+  {
+    "name": "Helianthus (Sunflower)",
+    "comment": "Grows in many continents. Known for its large yellow blooms and agricultural value (oil production).",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sunflower_sky_backdrop.jpg/500px-Sunflower_sky_backdrop.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/SunflowerSunset2.jpg/500px-SunflowerSunset2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sunflower_macro_wide.jpg/500px-Sunflower_macro_wide.jpg"
+    ]
+  },
+  {
+    "name": "Orchidaceae (Orchids)",
+    "comment": "One of the largest plant families. Found almost worldwide (especially tropical regions). Extremely diverse.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg/500px-Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Orchidaceae.png/500px-Orchidaceae.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Phaelinopsis_plant_showing_monopodial_growth.JPG/250px-Phaelinopsis_plant_showing_monopodial_growth.JPG"
+    ]
+  },
+  {
+    "name": "Lilium (Lily)",
+    "comment": "Common in gardens across temperate regions. Popular ornamental flower with many hybrid varieties.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lilium_candidum_1.jpg/500px-Lilium_candidum_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Lillium_Stamens.jpg/500px-Lillium_Stamens.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Lily%2C_petal.jpg/500px-Lily%2C_petal.jpg"
+    ]
+  },
+  {
+    "name": "Dianthus caryophyllus (Carnation)",
+    "comment": "Widely grown for cut flowers. Popular in Europe, Asia, and the Americas.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/W_carnation4051.jpg/500px-W_carnation4051.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Gartennelke_1.jpg/500px-Gartennelke_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Carnation_buds.JPG/500px-Carnation_buds.JPG"
+    ]
+  },
+  {
+    "name": "Chrysanthemum (Chrysanthemum)",
+    "comment": "Extensively cultivated in Asia, Europe, and North America. One of the most popular decorative flowers globally.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Chrysanthemum_nangkingense.jpg/500px-Chrysanthemum_nangkingense.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/NIEdot318.jpg/500px-NIEdot318.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Pollens_of_Chrysanthemum.jpg/500px-Pollens_of_Chrysanthemum.jpg"
+    ]
+  },
+  {
+    "name": "Hibiscus (Hibiscus)",
+    "comment": "Thrives in tropical and subtropical climates. Common in Asia, Africa, and the Americas.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hibiscus_flower_TZ.jpg/500px-Hibiscus_flower_TZ.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Lesser_grass_blue_%28Zizina_otis%29_on_Hibiscus_flower_Koror.jpg/500px-Lesser_grass_blue_%28Zizina_otis%29_on_Hibiscus_flower_Koror.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Hibiscus_rosa-sinensis_in_sunset.jpg/500px-Hibiscus_rosa-sinensis_in_sunset.jpg"
+    ]
+  },
+  {
+    "name": "Narcissus (Daffodil)",
+    "comment": "Widely grown in temperate climates. Very common in spring gardens worldwide.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Narcissus_poeticus_subsp._radiiflorus.1658.jpg/500px-Narcissus_poeticus_subsp._radiiflorus.1658.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/One_daffodil_bulb.jpg/500px-One_daffodil_bulb.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Jonquil_up_close.jpg/500px-Jonquil_up_close.jpg"
+    ]
+  },
+  {
+    "name": "Bougainvillea",
+    "comment": "Extremely common in warm climates. Popular in tropical and Mediterranean regions for landscaping.",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bougainvillea_closeup.jpg/500px-Bougainvillea_closeup.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pink_paperflowers_%28Bougainvillea_glabra%29.jpg/500px-Pink_paperflowers_%28Bougainvillea_glabra%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bougainvillea%2C_Behbahan.jpg/500px-Bougainvillea%2C_Behbahan.jpg"
+    ]
+  }
+];
+
+const container = document.getElementById('flowers');
+
+flowers.forEach((flower, i) => {
+  const card = document.createElement('div');
+  card.className = 'flower-card';
+
+  const images = flower.images.map(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = flower.name;
+    img.loading = 'lazy';
+    img.addEventListener('error', () => img.classList.add('error'));
+    return img.outerHTML;
+  }).join('');
+
+  card.innerHTML = `
+    <div class="flower-header">
+      <span class="flower-number">#${i + 1}</span>
+      <span class="flower-name">${flower.name}</span>
+    </div>
+    <p class="flower-comment">${flower.comment}</p>
+    <div class="flower-images">${images}</div>
+  `;
+
+  // Re-attach error listeners after innerHTML (outerHTML loses them)
+  card.querySelectorAll('.flower-images img').forEach((img, idx) => {
+    img.src = flower.images[idx];
+    img.addEventListener('error', () => img.classList.add('error'));
+  });
+
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
