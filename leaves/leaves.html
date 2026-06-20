@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaves of the World</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0f4ee;
+      color: #2c2c2c;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #2d5016;
+      color: #fff;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      opacity: 0.75;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .leaf-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .leaf-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding: 1.25rem 1.5rem 0.75rem;
+      border-bottom: 1px solid #eaf0e6;
+    }
+
+    .leaf-number {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2d5016;
+      background: #e4f0d8;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    .leaf-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .leaf-comment {
+      padding: 0.75rem 1.5rem 1rem;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .leaf-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .leaf-images img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .leaf-images img:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .leaf-images { gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Leaves of the World</h1>
+  <p>Twenty of the most distinctive leaf types found across the globe</p>
+</header>
+
+<main>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#1</span>
+      <span class="leaf-name">Maple Leaf (Acer saccharum)</span>
+    </div>
+    <p class="leaf-comment">The sugar maple's iconic 5-lobed leaf turns brilliant scarlet and orange in autumn, making it the national symbol of Canada.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Acer_saccharum_%284976751017%29.jpg/500px-Acer_saccharum_%284976751017%29.jpg" alt="Maple Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Acer_saccharum_%286189667742%29.jpg/500px-Acer_saccharum_%286189667742%29.jpg" alt="Maple Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Acer_saccharum_%28sugar_maple_leaf_in_fall_colors%29_%28Flint_Ridge%2C_Ohio%2C_USA%29_1_%2821802972285%29.jpg/500px-Acer_saccharum_%28sugar_maple_leaf_in_fall_colors%29_%28Flint_Ridge%2C_Ohio%2C_USA%29_1_%2821802972285%29.jpg" alt="Maple Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#2</span>
+      <span class="leaf-name">Oak Leaf (Quercus robur)</span>
+    </div>
+    <p class="leaf-comment">The English oak's deeply lobed, rounded leaf is one of the most recognizable in European forests and can persist on young trees through winter.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Quercus_robur_-_Leaf_-_geograph.org.uk_-_4227261.jpg/500px-Quercus_robur_-_Leaf_-_geograph.org.uk_-_4227261.jpg" alt="Oak Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Quercus_robur_-_Leaf_-_geograph.org.uk_-_4227217.jpg/500px-Quercus_robur_-_Leaf_-_geograph.org.uk_-_4227217.jpg" alt="Oak Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Quercus_robur_leaf_gall.JPG/500px-Quercus_robur_leaf_gall.JPG" alt="Oak Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#3</span>
+      <span class="leaf-name">Ginkgo Leaf (Ginkgo biloba)</span>
+    </div>
+    <p class="leaf-comment">The fan-shaped ginkgo leaf is unique in the plant kingdom — it belongs to a living fossil lineage unchanged for over 200 million years.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ginkgo_biloba_Leaf.jpg/500px-Ginkgo_biloba_Leaf.jpg" alt="Ginkgo Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Ginkgo_biloba_leaf_01.jpg/500px-Ginkgo_biloba_leaf_01.jpg" alt="Ginkgo Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ginkgo_biloba_yellow_leaf.jpg/500px-Ginkgo_biloba_yellow_leaf.jpg" alt="Ginkgo Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#4</span>
+      <span class="leaf-name">Fern Leaf (Pteridium aquilinum)</span>
+    </div>
+    <p class="leaf-comment">Bracken fern produces large, triangular, bipinnate fronds and is one of the most widespread vascular plants on Earth, colonizing open land on every continent except Antarctica.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/2020_year._Herbarium._Pteridium_aquilinum._img-002.jpg/500px-2020_year._Herbarium._Pteridium_aquilinum._img-002.jpg" alt="Fern Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/2020_year._Herbarium._Pteridium_aquilinum._img-012.jpg/500px-2020_year._Herbarium._Pteridium_aquilinum._img-012.jpg" alt="Fern Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/2020_year._Herbarium._Pteridium_aquilinum._img-013.jpg/500px-2020_year._Herbarium._Pteridium_aquilinum._img-013.jpg" alt="Fern Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#5</span>
+      <span class="leaf-name">Banana Leaf (Musa)</span>
+    </div>
+    <p class="leaf-comment">Banana leaves can reach up to 3 metres long, making them among the largest simple leaves of any plant, and are widely used as natural serving platters and cooking wrappers.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hardy_banana_leaf_%28Musa_basjoo%29_in_Athens_on_6_August_2023.jpg/500px-Hardy_banana_leaf_%28Musa_basjoo%29_in_Athens_on_6_August_2023.jpg" alt="Banana Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana_leaf_green.jpg/500px-Banana_leaf_green.jpg" alt="Banana Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Banana_Leaf_closeup.jpg/500px-Banana_Leaf_closeup.jpg" alt="Banana Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#6</span>
+      <span class="leaf-name">Cannabis Leaf (Cannabis sativa)</span>
+    </div>
+    <p class="leaf-comment">The palmate leaf of Cannabis sativa, with its serrated, finger-like leaflets arranged in opposite pairs, is one of the most instantly recognized leaves in the world.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cannabis_sativa_leaf.jpg/500px-Cannabis_sativa_leaf.jpg" alt="Cannabis Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Cannabis_sativa_leaf_%281%29.jpg/500px-Cannabis_sativa_leaf_%281%29.jpg" alt="Cannabis Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Cannabis_sativa_leaf_Dorsal_aspect_2012_01_23_0830.JPG/500px-Cannabis_sativa_leaf_Dorsal_aspect_2012_01_23_0830.JPG" alt="Cannabis Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#7</span>
+      <span class="leaf-name">Bamboo Leaf (Phyllostachys)</span>
+    </div>
+    <p class="leaf-comment">Bamboo leaves are narrow, lance-shaped, and arranged in graceful alternating sprays on hollow culms — the fastest-growing woody plants on Earth.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/272_Bamboo_Phyllostachys_species_Hemingford_Grey_LEAF_epidermis_print.jpg/500px-272_Bamboo_Phyllostachys_species_Hemingford_Grey_LEAF_epidermis_print.jpg" alt="Bamboo Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Feuillage_de_bambou_bamboo_leaf_VAN_DEN_HENDE_ALAIN_CC_BY_SA_40_03_BG_PDP_-1445102995n45.jpg/500px-Feuillage_de_bambou_bamboo_leaf_VAN_DEN_HENDE_ALAIN_CC_BY_SA_40_03_BG_PDP_-1445102995n45.jpg" alt="Bamboo Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Feuillage_de_bambou_bamboo_leaf_VAN_DEN_HENDE_ALAIN_CC_BY_SA_40_05_BG_PDP_-14451032455Ai.jpg/500px-Feuillage_de_bambou_bamboo_leaf_VAN_DEN_HENDE_ALAIN_CC_BY_SA_40_05_BG_PDP_-14451032455Ai.jpg" alt="Bamboo Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#8</span>
+      <span class="leaf-name">Eucalyptus Leaf (Eucalyptus)</span>
+    </div>
+    <p class="leaf-comment">Eucalyptus leaves hang vertically to minimise sun exposure, are rich in volatile oils that give the tree its distinctive scent, and serve as the exclusive diet of koalas.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/166_Eucalyptus_gunni_lower_side_LEAF_epidermis_print.jpg/500px-166_Eucalyptus_gunni_lower_side_LEAF_epidermis_print.jpg" alt="Eucalyptus Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Eucalyptus_sp._leaf_epidermis_print_and_stomata_100x.jpg/500px-Eucalyptus_sp._leaf_epidermis_print_and_stomata_100x.jpg" alt="Eucalyptus Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Eucalyptus_sp._Leaf_epidermis_print_with_stomata_400x.jpg/500px-Eucalyptus_sp._Leaf_epidermis_print_with_stomata_400x.jpg" alt="Eucalyptus Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#9</span>
+      <span class="leaf-name">Olive Leaf (Olea europaea)</span>
+    </div>
+    <p class="leaf-comment">The olive's narrow, leathery, silver-grey leaf is drought-adapted with a thick cuticle and reflective underside, allowing the tree to thrive in the harsh Mediterranean climate.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Olea_europaea_subsp_europaea_Leafs.jpg/500px-Olea_europaea_subsp_europaea_Leafs.jpg" alt="Olive Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Olea_europaea_10zz.jpg/500px-Olea_europaea_10zz.jpg" alt="Olive Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Olea_europaea_5zz.jpg/500px-Olea_europaea_5zz.jpg" alt="Olive Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#10</span>
+      <span class="leaf-name">Pine Needle (Pinus sylvestris)</span>
+    </div>
+    <p class="leaf-comment">Scots pine needles grow in pairs, are blue-green, and are coated in a thick waxy cuticle that dramatically reduces water loss during cold, dry winters.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Pinus_sylvestris_2020_G2.jpg/500px-Pinus_sylvestris_2020_G2.jpg" alt="Pine Needle" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pinus_sylvestris_2026_G1.jpg/500px-Pinus_sylvestris_2026_G1.jpg" alt="Pine Needle" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Pinus_sylvestris_2026_G3.jpg/500px-Pinus_sylvestris_2026_G3.jpg" alt="Pine Needle" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#11</span>
+      <span class="leaf-name">Palm Leaf (Arecaceae)</span>
+    </div>
+    <p class="leaf-comment">Palm leaves, or fronds, are either fan-shaped (palmate) or feather-shaped (pinnate) and can reach several metres in length, providing iconic tropical canopy cover.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Palm_leaf_%28closeup%29.jpg/500px-Palm_leaf_%28closeup%29.jpg" alt="Palm Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/The_Palm_Leaf_%2848698166481%29.jpg/500px-The_Palm_Leaf_%2848698166481%29.jpg" alt="Palm Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Starr-141027-2637-Unknown_arecaceae-leaf_axil_with_little_fire_ant_colony_with_queens-Nahiku-Maui_%2825221823126%29.jpg/500px-Starr-141027-2637-Unknown_arecaceae-leaf_axil_with_little_fire_ant_colony_with_queens-Nahiku-Maui_%2825221823126%29.jpg" alt="Palm Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#12</span>
+      <span class="leaf-name">Fig Leaf (Ficus carica)</span>
+    </div>
+    <p class="leaf-comment">The common fig's large, deeply lobed leaf has a rough, sandpaper-like texture from short stiff hairs, and produces a milky latex sap when broken.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Ficus_carica_Leaf_variations.jpg/500px-Ficus_carica_Leaf_variations.jpg" alt="Fig Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Reticulate_veins_in_leaf_of_Ficus_carica_IMG_9202s.jpg/500px-Reticulate_veins_in_leaf_of_Ficus_carica_IMG_9202s.jpg" alt="Fig Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Reticulate_veins_in_leaf_of_Ficus_carica_IMG_9203s.jpg/500px-Reticulate_veins_in_leaf_of_Ficus_carica_IMG_9203s.jpg" alt="Fig Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#13</span>
+      <span class="leaf-name">Lotus Leaf (Nelumbo nucifera)</span>
+    </div>
+    <p class="leaf-comment">The sacred lotus leaf is famous for its superhydrophobic "lotus effect" — water droplets bead up and roll off the waxy, nano-textured surface, taking dirt with them.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Sunlight_through_Nelumbo_nucifera_leaf_%28Sacred_lotus%29.jpg/500px-Sunlight_through_Nelumbo_nucifera_leaf_%28Sacred_lotus%29.jpg" alt="Lotus Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Nelumbo_nucifera_002.JPG/500px-Nelumbo_nucifera_002.JPG" alt="Lotus Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Indian_Lotus_%28Nelumbo_nucifera%29_leaf_I2_IMG_6266.jpg/500px-Indian_Lotus_%28Nelumbo_nucifera%29_leaf_I2_IMG_6266.jpg" alt="Lotus Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#14</span>
+      <span class="leaf-name">Ivy Leaf (Hedera helix)</span>
+    </div>
+    <p class="leaf-comment">Common ivy leaves display striking heterophylly — juvenile leaves are distinctively lobed while adult leaves on flowering stems are entire and oval-shaped.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Blad_van_klimop_%28Hedera_helix%29_01.JPG/500px-Blad_van_klimop_%28Hedera_helix%29_01.JPG" alt="Ivy Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Blad_van_klimop_%28Hedera_helix%29_02.JPG/500px-Blad_van_klimop_%28Hedera_helix%29_02.JPG" alt="Ivy Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hedera_helix_%28Ivy%29_leaf_epidermis_and_stomata_print_100x.jpg/500px-Hedera_helix_%28Ivy%29_leaf_epidermis_and_stomata_print_100x.jpg" alt="Ivy Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#15</span>
+      <span class="leaf-name">Monstera Leaf (Monstera deliciosa)</span>
+    </div>
+    <p class="leaf-comment">The monstera's huge, perforated leaf develops its characteristic holes (fenestrations) as the plant matures, a trait thought to let wind and dappled light pass through in its rainforest habitat.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/New_Monstera_Deliciosa_Leaf.jpg/500px-New_Monstera_Deliciosa_Leaf.jpg" alt="Monstera Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Monstera_deliciosa_DSC02605.jpg/500px-Monstera_deliciosa_DSC02605.jpg" alt="Monstera Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Monstera_deliciosa_Monstera_dziurawa_2023-10-31_02.jpg/500px-Monstera_deliciosa_Monstera_dziurawa_2023-10-31_02.jpg" alt="Monstera Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#16</span>
+      <span class="leaf-name">Birch Leaf (Betula pendula)</span>
+    </div>
+    <p class="leaf-comment">Silver birch leaves are small, triangular, and doubly serrated with a long drip-tip, allowing the tree to be one of the first colonisers of open ground after disturbance.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Betula_pendula_leaf_illustration.jpg/500px-Betula_pendula_leaf_illustration.jpg" alt="Birch Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Betula_pendula_leaf_epidermis_print_and_stomata_100x.jpg/500px-Betula_pendula_leaf_epidermis_print_and_stomata_100x.jpg" alt="Birch Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/PIH_2018_Silver_Birch_%28Betula_pendula%29_sapling_leaf_bud_in_Haapastensyrj%C3%A4_Finland.jpg/500px-PIH_2018_Silver_Birch_%28Betula_pendula%29_sapling_leaf_bud_in_Haapastensyrj%C3%A4_Finland.jpg" alt="Birch Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#17</span>
+      <span class="leaf-name">Cherry Leaf (Prunus avium)</span>
+    </div>
+    <p class="leaf-comment">The wild cherry leaf is oval with a finely serrated margin and bears two distinctive red glands at the base of the blade where the petiole meets the leaf.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Prunus_avium_leaf.jpg/500px-Prunus_avium_leaf.jpg" alt="Cherry Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Prunus_avium_subsp._avium_sl14.jpg/500px-Prunus_avium_subsp._avium_sl14.jpg" alt="Cherry Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Prunus_avium_subsp._avium_sl15.jpg/500px-Prunus_avium_subsp._avium_sl15.jpg" alt="Cherry Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#18</span>
+      <span class="leaf-name">Willow Leaf (Salix babylonica)</span>
+    </div>
+    <p class="leaf-comment">The weeping willow's extremely long, narrow, lance-shaped leaves — up to 16 cm long but only 1–2 cm wide — give the tree its characteristic cascading, curtain-like silhouette.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Salix_babylonica_leaf_close-up.jpg/500px-Salix_babylonica_leaf_close-up.jpg" alt="Willow Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/SalixBabylonicaLeaf.jpg/500px-SalixBabylonicaLeaf.jpg" alt="Willow Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Weeping_Willow_leaf_%283212275000%29.jpg/500px-Weeping_Willow_leaf_%283212275000%29.jpg" alt="Willow Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#19</span>
+      <span class="leaf-name">Clover Leaf (Trifolium)</span>
+    </div>
+    <p class="leaf-comment">Clover's trifoliate leaf, typically with a pale chevron marking on each leaflet, is the original shamrock and a nitrogen-fixing plant that enriches the soil around it.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Four-leaf_Clover_Trifolium_repens_1.jpg/500px-Four-leaf_Clover_Trifolium_repens_1.jpg" alt="Clover Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Four-leaf_Clover_Trifolium_repens_2.jpg/500px-Four-leaf_Clover_Trifolium_repens_2.jpg" alt="Clover Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Five_Leaf_Clover_Trifolium_Medium.JPG/500px-Five_Leaf_Clover_Trifolium_Medium.JPG" alt="Clover Leaf" loading="lazy">
+    </div>
+  </div>
+
+  <div class="leaf-card">
+    <div class="leaf-header">
+      <span class="leaf-number">#20</span>
+      <span class="leaf-name">Rose Leaf (Rosa)</span>
+    </div>
+    <p class="leaf-comment">Rose leaves are pinnately compound with an odd number of sharply toothed leaflets, and their undersides are often slightly paler and dotted with glands that produce a characteristic fragrance.</p>
+    <div class="leaf-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Rose_leaf_3.jpg/500px-Rose_leaf_3.jpg" alt="Rose Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/A_bud_of_a_rose_leaf.jpg/500px-A_bud_of_a_rose_leaf.jpg" alt="Rose Leaf" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Rosa_sp._%28Rose%29_leaf_epidermis_and_stomata_print_100x.jpg/500px-Rosa_sp._%28Rose%29_leaf_epidermis_and_stomata_print_100x.jpg" alt="Rose Leaf" loading="lazy">
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
