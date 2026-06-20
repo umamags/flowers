@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trees of the World</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0ede8;
+      color: #2c2c2c;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #3b2a1a;
+      color: #fff;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      opacity: 0.75;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .tree-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .tree-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding: 1.25rem 1.5rem 0.75rem;
+      border-bottom: 1px solid #ede9e4;
+    }
+
+    .tree-number {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #3b2a1a;
+      background: #f0e6d8;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    .tree-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .tree-comment {
+      padding: 0.75rem 1.5rem 1rem;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .tree-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .tree-images img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .tree-images img:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .tree-images { gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Trees of the World</h1>
+  <p>Twenty of the most popular trees found across the globe</p>
+</header>
+
+<main>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#1</span>
+      <span class="tree-name">Quercus (Oak)</span>
+    </div>
+    <p class="tree-comment">One of the most widespread and culturally significant trees in the Northern Hemisphere. Oaks support more wildlife species than almost any other tree and live for hundreds of years.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Quercus_robur_acorn_-_Keila.jpg/500px-Quercus_robur_acorn_-_Keila.jpg" alt="Quercus (Oak)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Quercus_robur_acorns_in_Tuntorp_1.jpg/500px-Quercus_robur_acorns_in_Tuntorp_1.jpg" alt="Quercus (Oak)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Langaa_egeskov_rimfrost.jpg/500px-Langaa_egeskov_rimfrost.jpg" alt="Quercus (Oak)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#2</span>
+      <span class="tree-name">Acer (Maple)</span>
+    </div>
+    <p class="tree-comment">Famous for spectacular autumn foliage and maple syrup production. The maple leaf is the national symbol of Canada, and the tree is beloved in gardens and forests across temperate regions.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Sugar_Maple_Acer_saccharum_Bark_Horizontal_3008px.jpg/500px-Sugar_Maple_Acer_saccharum_Bark_Horizontal_3008px.jpg" alt="Acer (Maple)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Acer_saccharum_UL_01.jpg/500px-Acer_saccharum_UL_01.jpg" alt="Acer (Maple)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Acer_saccharum_UL_06.jpg/500px-Acer_saccharum_UL_06.jpg" alt="Acer (Maple)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#3</span>
+      <span class="tree-name">Pinus (Pine)</span>
+    </div>
+    <p class="tree-comment">The most widespread conifer genus in the world, found from the Arctic to tropical mountains. Pines are vital for timber, resin, and as habitat for countless species.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Meenikunno_maastikukaiteala.jpg/500px-Meenikunno_maastikukaiteala.jpg" alt="Pinus (Pine)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pine_log_cross-sections%2C_Teutendorf%2C_2016-09-17.jpg/500px-Pine_log_cross-sections%2C_Teutendorf%2C_2016-09-17.jpg" alt="Pinus (Pine)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Delleboersterheide%2C_natuurgebied_van_het_It_Fryske_Gea._05-02-2025._%28actm.%29_11.jpg/500px-Delleboersterheide%2C_natuurgebied_van_het_It_Fryske_Gea._05-02-2025._%28actm.%29_11.jpg" alt="Pinus (Pine)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#4</span>
+      <span class="tree-name">Prunus serrulata (Cherry Blossom)</span>
+    </div>
+    <p class="tree-comment">The Japanese cherry blossom, or sakura, is one of the world's most celebrated trees. Its brief but spectacular spring bloom draws millions of visitors to festivals across Japan, Korea, and beyond.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Prunus_serrulata_2005_spring_025.jpg/500px-Prunus_serrulata_2005_spring_025.jpg" alt="Prunus serrulata (Cherry Blossom)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Cerisier_du_Japon_Prunus_serrulata.jpg/500px-Cerisier_du_Japon_Prunus_serrulata.jpg" alt="Prunus serrulata (Cherry Blossom)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Sakura_branch_April.jpg/500px-Sakura_branch_April.jpg" alt="Prunus serrulata (Cherry Blossom)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#5</span>
+      <span class="tree-name">Eucalyptus</span>
+    </div>
+    <p class="tree-comment">Native to Australia but one of the most planted trees in the world. Eucalyptus grows extremely fast, is used for timber and oil, and defines the landscape of Australia and parts of Africa, Asia, and South America.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Eucalyptus_regnans_Sherbrooke.jpg/500px-Eucalyptus_regnans_Sherbrooke.jpg" alt="Eucalyptus" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Eucalyptus_regnans_feuilles_jardin_jungle.jpg/500px-Eucalyptus_regnans_feuilles_jardin_jungle.jpg" alt="Eucalyptus" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Eucalyptus_regnans_et_Dicksonia_antarctica_en_Tasmanie.jpg/500px-Eucalyptus_regnans_et_Dicksonia_antarctica_en_Tasmanie.jpg" alt="Eucalyptus" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#6</span>
+      <span class="tree-name">Cocos nucifera (Coconut Palm)</span>
+    </div>
+    <p class="tree-comment">Dubbed the 'tree of life' in many tropical cultures, the coconut palm provides food, water, timber, fiber, and oil. It is cultivated across the tropical belt from the Pacific to the Atlantic.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Coconut_Tree.JPG/500px-Coconut_Tree.JPG" alt="Cocos nucifera (Coconut Palm)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Coconut_Palm_Cola_Bay_Goa_Jan19_DSC00303.jpg/500px-Coconut_Palm_Cola_Bay_Goa_Jan19_DSC00303.jpg" alt="Cocos nucifera (Coconut Palm)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cocos_nucifera_%27Red_Spicata_Dwarf%27_kz02.jpg/500px-Cocos_nucifera_%27Red_Spicata_Dwarf%27_kz02.jpg" alt="Cocos nucifera (Coconut Palm)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#7</span>
+      <span class="tree-name">Ficus benghalensis (Banyan)</span>
+    </div>
+    <p class="tree-comment">The national tree of India and a sacred symbol across South and Southeast Asia. Banyans grow vast aerial root systems that can span entire acres, creating natural cathedrals of vegetation.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Ficus_benghalensis_Indian_banyan_with_fruits_JEG2976.jpg/500px-Ficus_benghalensis_Indian_banyan_with_fruits_JEG2976.jpg" alt="Ficus benghalensis (Banyan)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Ficus_benghalensis_%28Banyan%29.jpg/500px-Ficus_benghalensis_%28Banyan%29.jpg" alt="Ficus benghalensis (Banyan)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Roadside_Banyan_tree_%28Ficus_benghalensis%29_at_Kothavalasa.jpg/500px-Roadside_Banyan_tree_%28Ficus_benghalensis%29_at_Kothavalasa.jpg" alt="Ficus benghalensis (Banyan)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#8</span>
+      <span class="tree-name">Adansonia (Baobab)</span>
+    </div>
+    <p class="tree-comment">Known as the 'tree of life' in Africa, baobabs can live for thousands of years and store thousands of liters of water in their massive trunks. They are iconic across the African savanna and Madagascar.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Adansonia_digitata_MS_6682.JPG/500px-Adansonia_digitata_MS_6682.JPG" alt="Adansonia (Baobab)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Baobab_Adansonia_digitata.jpg/500px-Baobab_Adansonia_digitata.jpg" alt="Adansonia (Baobab)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Adansonia_digitata_Baobab.JPG/500px-Adansonia_digitata_Baobab.JPG" alt="Adansonia (Baobab)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#9</span>
+      <span class="tree-name">Sequoiadendron giganteum (Giant Sequoia)</span>
+    </div>
+    <p class="tree-comment">The largest trees on Earth by volume, native to the Sierra Nevada of California. Giant sequoias can live over 3,000 years and reach heights above 80 meters, making them one of nature's most awe-inspiring organisms.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Giant_sequoias_in_Sequoia_National_Park_2013.jpg/500px-Giant_sequoias_in_Sequoia_National_Park_2013.jpg" alt="Sequoiadendron giganteum (Giant Sequoia)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Sequoiadendron_giganteum_Giant_Sequoia_Lightning_2448px.jpg/500px-Sequoiadendron_giganteum_Giant_Sequoia_Lightning_2448px.jpg" alt="Sequoiadendron giganteum (Giant Sequoia)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Mammoetboom_%28Sequoiadendron_giganteum%29_Hortus_Haren.JPG/500px-Mammoetboom_%28Sequoiadendron_giganteum%29_Hortus_Haren.JPG" alt="Sequoiadendron giganteum (Giant Sequoia)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#10</span>
+      <span class="tree-name">Betula (Birch)</span>
+    </div>
+    <p class="tree-comment">Instantly recognizable by their white papery bark, birch trees are pioneer species that quickly colonize open land across northern Europe, Asia, and North America. They are valued for timber, paper, and cultural symbolism.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Birch_trunks_in_snow_and_sunshine_-_2.jpg/500px-Birch_trunks_in_snow_and_sunshine_-_2.jpg" alt="Betula (Birch)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/New_snow_on_birch_crowns_in_Tuntorp_3.jpg/500px-New_snow_on_birch_crowns_in_Tuntorp_3.jpg" alt="Betula (Birch)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Part_of_birch_trunk_in_Norrkila.jpg/500px-Part_of_birch_trunk_in_Norrkila.jpg" alt="Betula (Birch)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#11</span>
+      <span class="tree-name">Olea europaea (Olive)</span>
+    </div>
+    <p class="tree-comment">One of the oldest cultivated trees in the world, the olive has been central to Mediterranean civilization for over 6,000 years. It produces the famous olive oil and can live for millennia.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Lun_olive_tree_1600_years.jpg/500px-Lun_olive_tree_1600_years.jpg" alt="Olea europaea (Olive)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Olea_europaea%2C_Murviel-l%C3%A8s-B%C3%A9ziers.jpg/500px-Olea_europaea%2C_Murviel-l%C3%A8s-B%C3%A9ziers.jpg" alt="Olea europaea (Olive)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Olea_europaea_Preveli_01.JPG/500px-Olea_europaea_Preveli_01.JPG" alt="Olea europaea (Olive)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#12</span>
+      <span class="tree-name">Salix babylonica (Weeping Willow)</span>
+    </div>
+    <p class="tree-comment">Renowned for its graceful drooping branches, the weeping willow is one of the world's most recognizable ornamental trees. It thrives near water and is widely planted in parks and gardens globally.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salix_babylonica_Tehran_User_Alborzagos.JPG/500px-Salix_babylonica_Tehran_User_Alborzagos.JPG" alt="Salix babylonica (Weeping Willow)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Salix_babylonica_-_Rouge_Park.jpg/500px-Salix_babylonica_-_Rouge_Park.jpg" alt="Salix babylonica (Weeping Willow)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Salix_babylonica_%28Saule_pleureur%29_-_20150810_10h23_%2811045%29.jpg/500px-Salix_babylonica_%28Saule_pleureur%29_-_20150810_10h23_%2811045%29.jpg" alt="Salix babylonica (Weeping Willow)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#13</span>
+      <span class="tree-name">Cedrus (Cedar)</span>
+    </div>
+    <p class="tree-comment">Ancient and majestic conifers native to the mountains of the Mediterranean and Himalayan regions. Cedars have been prized for millennia for their aromatic, durable wood used in temples and palaces.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Cedars_of_God_%28Lebanon_cedar_forests%29%2C_Lebanon.jpg/500px-Cedars_of_God_%28Lebanon_cedar_forests%29%2C_Lebanon.jpg" alt="Cedrus (Cedar)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Cedar_of_Lebanon_%28Cedar_of_God%29%2C_Lebanon.jpg/500px-Cedar_of_Lebanon_%28Cedar_of_God%29%2C_Lebanon.jpg" alt="Cedrus (Cedar)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pinaceae_Cedrus_libani_2.jpg/500px-Pinaceae_Cedrus_libani_2.jpg" alt="Cedrus (Cedar)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#14</span>
+      <span class="tree-name">Magnolia</span>
+    </div>
+    <p class="tree-comment">Among the oldest flowering trees on Earth, magnolias predate bees and evolved to be pollinated by beetles. Their large, fragrant blossoms make them a prized ornamental tree in gardens worldwide.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Magnolia_flower_Duke_campus.jpg/500px-Magnolia_flower_Duke_campus.jpg" alt="Magnolia" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Magnolia_grandiflora_-_flower_1.jpg/500px-Magnolia_grandiflora_-_flower_1.jpg" alt="Magnolia" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Magnolia_grandiflora_3964.jpg/500px-Magnolia_grandiflora_3964.jpg" alt="Magnolia" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#15</span>
+      <span class="tree-name">Acacia</span>
+    </div>
+    <p class="tree-comment">Defining trees of the African and Australian landscape, acacias are renowned for their umbrella-shaped canopies on the savanna and thorny defenses. They are also vital nitrogen-fixers that enrich the soil.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Acacia_%28Vachellia_tortilis%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-22%2C_DD_98.jpg/500px-Acacia_%28Vachellia_tortilis%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-22%2C_DD_98.jpg" alt="Acacia" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Acacia_%28Vachellia_tortilis%29%2C_parque_nacional_Serengueti%2C_Tanzania%2C_2024-05-26%2C_DD_26.jpg/500px-Acacia_%28Vachellia_tortilis%29%2C_parque_nacional_Serengueti%2C_Tanzania%2C_2024-05-26%2C_DD_26.jpg" alt="Acacia" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Vachellia_tortilis_vel_Acacia_tortilis_kz07.jpg/500px-Vachellia_tortilis_vel_Acacia_tortilis_kz07.jpg" alt="Acacia" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#16</span>
+      <span class="tree-name">Ulmus (Elm)</span>
+    </div>
+    <p class="tree-comment">Stately shade trees that once lined streets and parks across Europe and North America. Elms are valued for their vase-shaped form and dense canopy, though Dutch elm disease devastated many populations in the 20th century.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/2014_Old_elm_Sliven_BG.jpg/500px-2014_Old_elm_Sliven_BG.jpg" alt="Ulmus (Elm)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Elm_leaves_%28Ulmus_minor%29.jpg/500px-Elm_leaves_%28Ulmus_minor%29.jpg" alt="Ulmus (Elm)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/2012_The_Elm_Tree_from_C%C4%83peni_%28K%C3%B6pec%29_RO.jpg/500px-2012_The_Elm_Tree_from_C%C4%83peni_%28K%C3%B6pec%29_RO.jpg" alt="Ulmus (Elm)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#17</span>
+      <span class="tree-name">Picea (Spruce)</span>
+    </div>
+    <p class="tree-comment">The quintessential Christmas tree and a cornerstone of boreal forests across the Northern Hemisphere. Spruce wood is also prized for musical instruments, including the soundboards of violins and guitars.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Spruce_forest_at_Holma.jpg/500px-Spruce_forest_at_Holma.jpg" alt="Picea (Spruce)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Spruce_tree_stump_in_Gullmarsskogen_ravine.jpg/500px-Spruce_tree_stump_in_Gullmarsskogen_ravine.jpg" alt="Picea (Spruce)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Kuusk_Keila-Paldiski_rdt_%C3%A4%C3%A4res.jpg/500px-Kuusk_Keila-Paldiski_rdt_%C3%A4%C3%A4res.jpg" alt="Picea (Spruce)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#18</span>
+      <span class="tree-name">Tectona grandis (Teak)</span>
+    </div>
+    <p class="tree-comment">One of the world's most valuable timber trees, native to South and Southeast Asia. Teak's naturally oily, hard wood is exceptionally durable and weather-resistant, making it prized for furniture, ships, and construction.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Kannimara_Teak_in_Parambikulam_Tiger_Reserve_on_13-01-2011_P1120625.jpg/500px-Kannimara_Teak_in_Parambikulam_Tiger_Reserve_on_13-01-2011_P1120625.jpg" alt="Tectona grandis (Teak)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Teak_plants_%28Tectona_grandis%29_at_Gudilova_temples.jpg/500px-Teak_plants_%28Tectona_grandis%29_at_Gudilova_temples.jpg" alt="Tectona grandis (Teak)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Tectona_grandis_from_Kerala_02.jpg/500px-Tectona_grandis_from_Kerala_02.jpg" alt="Tectona grandis (Teak)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#19</span>
+      <span class="tree-name">Bambusa (Bamboo)</span>
+    </div>
+    <p class="tree-comment">The fastest-growing plant on Earth, with some species shooting up nearly a meter per day. Bamboo is a cornerstone of Asian culture and ecology, used for food, construction, textiles, and as critical habitat for giant pandas.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Bambusa_vulgaris_-_Bamboo_Tree.jpg/500px-Bambusa_vulgaris_-_Bamboo_Tree.jpg" alt="Bambusa (Bamboo)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/%28Bambusa_bambos%29_Indian_thorny_Bamboo_at_Kambalakonda.jpg/500px-%28Bambusa_bambos%29_Indian_thorny_Bamboo_at_Kambalakonda.jpg" alt="Bambusa (Bamboo)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Bamboo_tree_in_Ghana.jpg/500px-Bamboo_tree_in_Ghana.jpg" alt="Bambusa (Bamboo)" loading="lazy">
+    </div>
+  </div>
+
+  <div class="tree-card">
+    <div class="tree-header">
+      <span class="tree-number">#20</span>
+      <span class="tree-name">Malus domestica (Apple)</span>
+    </div>
+    <p class="tree-comment">One of the most cultivated fruit trees in history, the apple tree has been grown for over 4,000 years. With thousands of varieties, it is central to agriculture and culture across Europe, Asia, and the Americas.</p>
+    <div class="tree-images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Apple-tree_blossoms_2017_G3.jpg/500px-Apple-tree_blossoms_2017_G3.jpg" alt="Malus domestica (Apple)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Tree_with_red_apples_in_Barkedal_4.jpg/500px-Tree_with_red_apples_in_Barkedal_4.jpg" alt="Malus domestica (Apple)" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Malus_domestica_%28Apple%29_flowers_3.jpg/500px-Malus_domestica_%28Apple%29_flowers_3.jpg" alt="Malus domestica (Apple)" loading="lazy">
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
